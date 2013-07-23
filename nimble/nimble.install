@@ -1,0 +1,145 @@
+<?php
+/**
+* Implement hook_install().
+*
+* Perform actions to set up the site for this profile.
+*/
+function nimble_install() {
+
+  /* Run the Minimal install profile's hook. */
+  include_once DRUPAL_ROOT . '/profiles/minimal/minimal.install';
+  minimal_install();
+
+  /* Disable user self-registration. Apperantly this need to be a string. */
+  variable_set('user_register', '0');
+
+  /* Enable and set the Adminimal theme as the administrative theme. */
+  $admin_theme = 'adminimal';
+  theme_enable(array($admin_theme));
+  variable_set('admin_theme', $admin_theme);
+  variable_set('node_admin_theme', 1);
+
+  /* Remove all the blocks which are in the Content region and are not the
+   * system's main block. */
+  db_update('block')
+    ->fields(array('region' => -1))
+    ->condition('theme', $admin_theme)
+    ->condition('region', 'content')
+    ->condition(db_or()
+                  ->condition('module', 'system', '!=')
+                  ->condition('delta', 'main', '!='))
+    ->execute();
+
+  /* Initialize settings for the Administration Menu module */
+  variable_set('admin_menu_tweak_tabs', TRUE);
+  variable_set('admin_menu_components', array(
+    'admin_menu.icon' => TRUE,
+    'admin_menu.menu' => TRUE,
+    'admin_menu.users' => TRUE,
+    'admin_menu.account' => TRUE,
+    'admin_menu.search' => FALSE,
+  ));
+
+  /* Initialize settings for the Views module. */
+  variable_set('views_show_advanced_help_warning', FALSE);
+  variable_set('views_ui_show_advanced_column', TRUE);
+  variable_set('views_ui_show_listing_filters', TRUE);
+  variable_set('views_ui_show_master_display', TRUE);
+  variable_set('views_ui_show_sql_query', TRUE);
+
+  /* Initialize settings for the Pathauto module. */
+  variable_set('pathauto_node_pattern', '');
+
+  /* Create a Home link in the Main menu. */
+  $menu_home_link = array(
+    'link_path' => drupal_get_normal_path('<front>'),
+    'link_title' => 'Home',
+    'menu_name' => 'main-menu',
+  );
+  menu_link_save($menu_home_link);
+  menu_cache_clear_all();
+
+}
+
+/**
+ * Form builder for our install settings form.
+ */
+function nimble_form_install_settings_form($form, $form_state) {
+  global $install_state;
+
+  // Build the default database settings form.
+  $form = install_settings_form($form, $form_state, $install_state);
+
+  /* Add the environment indicator fields to the form. We start off by setting
+   * up the color picker. */
+  drupal_add_library('system', 'farbtastic');
+  drupal_add_css('#environment-indicator-color-picker { float: right; }', array('type' => 'inline'));
+  drupal_add_js(drupal_get_path('module', 'environment_indicator') .'/environment_indicator.admin.js');
+
+  /* Now let's add some actual form_state elements. We put the color picker first
+   * because we'll float it to the right with CSS */
+  $form['environment_indicator'] = array(
+      '#type' => 'fieldset',
+      '#title' => 'Environment indicator',
+      '#collapsible' => TRUE,
+      '#weight' => '1',
+  );
+  $form['environment_indicator']['environment_indicator_color_picker'] = array(
+    '#markup' => '<div id="environment-indicator-color-picker"></div>',
+  );
+  $form['environment_indicator']['environment_indicator_text'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Environment name'),
+    '#default_value' => variable_get('environment_indicator_text', 'UNKNOWN'),
+    '#description' => t('Text to display in the environment indicator.'),
+  );
+  $form['environment_indicator']['environment_indicator_color'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Colour'),
+    '#default_value' => variable_get('environment_indicator_color', '#000000'),
+    '#description' => t('The colour of the environment indicator.'),
+    '#size' => 7,
+  );
+
+  // Make sure that the default validation runs.
+ $form['#validate'] = array(
+    'install_settings_form_validate'
+  );
+
+  // Add our own submission handler (remove the default).
+  $form['actions']['save']['#submit'] = array('_nimble_install_settings_form_submit');
+  return $form;
+}
+
+/**
+* Used to override the the submit handler for the settings form. */
+function _nimble_install_settings_form_submit($form, &$form_state) {
+  global $install_state;
+
+  // Update global settings array.
+  $settings['databases'] = array(
+    'value'    => array('default' => array('default' => $form_state['storage']['database'])),
+    'required' => TRUE,
+  );
+  $settings['drupal_hash_salt'] = array(
+    'value'    => drupal_hash_base64(drupal_random_bytes(55)),
+    'required' => TRUE,
+  );
+
+  /* Add our own custom settings */
+  $settings['conf[\'environment_indicator_text\']'] = array(
+    'value' => $form_state['input']['environment_indicator_text'],
+    'required' => TRUE, );
+  $settings['conf[\'environment_indicator_color\']'] = array(
+    'value' => $form_state['input']['environment_indicator_color'],
+    'required' => TRUE, );
+
+  /* And save. */
+  drupal_rewrite_settings($settings);
+  // Indicate that the settings file has been verified, and check the database
+  // for the last completed task, now that we have a valid connection. This
+  // last step is important since we want to trigger an error if the new
+  // database already has Drupal installed.
+  $install_state['settings_verified'] = TRUE;
+  $install_state['completed_task'] = install_verify_completed_task();
+}

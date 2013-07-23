@@ -1,0 +1,52 @@
+name = Nimble
+description = Install with Spry Digital's standard rollout of modules and features.
+core = 7.x
+
+; Core dependencies
+dependencies[] = block
+dependencies[] = dblog
+dependencies[] = field_sql_storage
+dependencies[] = field
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = filter
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = node
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = php
+dependencies[] = system
+dependencies[] = text
+dependencies[] = update
+dependencies[] = user
+
+; Contributed dependencies
+dependencies[] = devel
+dependencies[] = diff
+dependencies[] = features
+dependencies[] = field_group
+dependencies[] = ctools
+dependencies[] = page_manager
+dependencies[] = views_content
+dependencies[] = views
+dependencies[] = views_ui
+dependencies[] = entity
+dependencies[] = entity_token
+dependencies[] = views_bulk_operations
+dependencies[] = panels
+dependencies[] = admin_menu
+dependencies[] = admin_menu_adminimal
+dependencies[] = environment_indicator
+dependencies[] = fpa
+dependencies[] = module_filter
+dependencies[] = token
+dependencies[] = pathauto
+dependencies[] = menu_block
+dependencies[] = file_entity
+dependencies[] = media
+
+; Feature dependencies
+dependencies[] = spry_admin_ui
