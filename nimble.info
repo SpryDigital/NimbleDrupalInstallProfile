@@ -50,6 +50,7 @@ dependencies[] = media
 dependencies[] = ckeditor
 dependencies[] = redirect
 dependencies[] = xmlsitemap
+dependencies[] = references
 
 
 ; Feature dependencies
