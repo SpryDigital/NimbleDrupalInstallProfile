@@ -38,7 +38,7 @@ dependencies[] = entity_token
 dependencies[] = views_bulk_operations
 dependencies[] = panels
 dependencies[] = admin_menu
-dependencies[] = admin_menu_adminimal
+dependencies[] = adminimal_admin_menu
 dependencies[] = environment_indicator
 dependencies[] = fpa
 dependencies[] = module_filter
@@ -47,6 +47,10 @@ dependencies[] = pathauto
 dependencies[] = menu_block
 dependencies[] = file_entity
 dependencies[] = media
+dependencies[] = ckeditor
+dependencies[] = redirect
+dependencies[] = xmlsitemap
+
 
 ; Feature dependencies
 dependencies[] = spry_admin_ui
