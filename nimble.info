@@ -51,6 +51,7 @@ dependencies[] = ckeditor
 dependencies[] = redirect
 dependencies[] = xmlsitemap
 dependencies[] = references
+dependencies[] = webform
 
 
 ; Feature dependencies
