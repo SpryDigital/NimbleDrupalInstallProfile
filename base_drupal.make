@@ -51,7 +51,7 @@ projects[token][version] = "1.5"
 
 projects[views][version] = "3.7"
 
-Projects[webform][version] = "7.x-4.0-beta3"
+projects[webform][version] = "7.x-4.0-beta3"
 
 projects[xmlsitemap][version] = "2.0-rc2"
 
