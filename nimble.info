@@ -4,6 +4,7 @@ core = 7.x
 
 ; Core dependencies
 dependencies[] = block
+dependencies[] = book
 dependencies[] = dblog
 dependencies[] = field_sql_storage
 dependencies[] = field
@@ -17,24 +18,25 @@ dependencies[] = node
 dependencies[] = number
 dependencies[] = options
 dependencies[] = path
-dependencies[] = php
 dependencies[] = system
+dependencies[] = taxonomy
 dependencies[] = text
-dependencies[] = update
 dependencies[] = user
 
 ; Contributed dependencies
-dependencies[] = devel
-dependencies[] = diff
+dependencies[] = ctools
+dependencies[] = backup_migrate
 dependencies[] = features
 dependencies[] = field_group
-dependencies[] = ctools
 dependencies[] = page_manager
 dependencies[] = views_content
 dependencies[] = views
 dependencies[] = views_ui
 dependencies[] = entity
-dependencies[] = entity_token
+dependencies[] = entityreference
+dependencies[] = googleanalytics
+dependencies[] = honeypot
+dependencies[] = jquery_update
 dependencies[] = views_bulk_operations
 dependencies[] = panels
 dependencies[] = admin_menu
@@ -48,10 +50,14 @@ dependencies[] = menu_block
 dependencies[] = file_entity
 dependencies[] = media
 dependencies[] = ckeditor
+dependencies[] = ckeditor_link
 dependencies[] = redirect
 dependencies[] = xmlsitemap
-dependencies[] = references
+dependencies[] = xmlsitemap_menu
 dependencies[] = webform
+dependencies[] = webform_civicrm
+dependencies[] = webform_layout
+dependencies[] = active_tags
 
 
 ; Feature dependencies

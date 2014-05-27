@@ -9,6 +9,8 @@ projects[drupal][version] = "7.28"
 
 ; Modules
 
+projects[backup_migrate][version] = "2.8"
+
 projects[views_bulk_operations][version] = "3.2"
 
 projects[admin_menu][version] = "3.0-rc4"
@@ -17,19 +19,25 @@ projects[adminimal_admin_menu][version] = "1.5"
 
 projects[ctools][version] = "1.4"
 
-projects[devel][version] = "1.5"
-
 projects[ckeditor][version] = "1.14"
 
-projects[diff][version] = "3.2"
+projects[ckeditor_link][version] = "2.3"
 
 projects[entity][version] = "1.5"
+
+projects[entityreference][version] = "1.1"
 
 projects[environment_indicator][version] = "2.3"
 
 projects[features][version] = "2.0"
 
 projects[field_group][version] = "1.3"
+
+projects[google_analytics][version] = "1.4"
+
+projects[honeypot][version] = "1.16"
+
+projects[jquery_update][version] = "2.4"
 
 projects[media][version] = "1.4"
 
@@ -53,7 +61,13 @@ projects[views][version] = "3.7"
 
 projects[webform][version] = "4.0-rc3"
 
+projects[webform_civicrm][version] = "4.6"
+
+projects[webform_layout][version] = "1.0"
+
 projects[xmlsitemap][version] = "2.0"
+
+project[active_tags][version] = "2.x-dev"
 
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
 ; and url is the url of the download.
