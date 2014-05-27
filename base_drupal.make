@@ -57,7 +57,7 @@ projects[redirect][version] = "1.0-rc1"
 
 projects[token][version] = "1.5"
 
-projects[views][version] = "3.7"
+projects[views][version] = "3.8"
 
 projects[webform][version] = "4.0-rc3"
 
