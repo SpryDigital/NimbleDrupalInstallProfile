@@ -67,6 +67,8 @@ projects[webform_layout][version] = "1.0"
 
 projects[xmlsitemap][version] = "2.0"
 
+projects[active_tags][version] = "2.x-dev"
+
 
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
 ; and url is the url of the download.
