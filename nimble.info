@@ -55,7 +55,6 @@ dependencies[] = redirect
 dependencies[] = xmlsitemap
 dependencies[] = xmlsitemap_menu
 dependencies[] = webform
-dependencies[] = webform_civicrm
 dependencies[] = webform_layout
 dependencies[] = active_tags
 

@@ -61,8 +61,6 @@ projects[views][version] = "3.8"
 
 projects[webform][version] = "4.0-rc3"
 
-projects[webform_civicrm][version] = "4.6"
-
 projects[webform_layout][version] = "1.0"
 
 projects[xmlsitemap][version] = "2.0"
