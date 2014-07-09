@@ -67,7 +67,7 @@ projects[xmlsitemap][version] = "2.0"
 
 projects[active_tags][version] = "2.x-dev"
 
-projects[metatag][version] = "7.x-1.0-beta9"
+projects[metatag][version] = "1.0-beta9"
 
 
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
