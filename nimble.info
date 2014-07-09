@@ -57,6 +57,7 @@ dependencies[] = xmlsitemap_menu
 dependencies[] = webform
 dependencies[] = webform_layout
 dependencies[] = active_tags
+dependencies[] = metatag
 
 
 ; Feature dependencies
