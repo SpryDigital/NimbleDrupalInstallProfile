@@ -5,7 +5,7 @@ api = 2
 
 ; Core
 
-projects[drupal][version] = "7.28"
+projects[drupal][version] = "7.33"
 
 ; Modules
 
@@ -19,7 +19,7 @@ projects[adminimal_admin_menu][version] = "1.5"
 
 projects[ctools][version] = "1.4"
 
-projects[ckeditor][version] = "1.14"
+projects[ckeditor][version] = "1.16"
 
 projects[ckeditor_link][version] = "2.3"
 
@@ -27,21 +27,21 @@ projects[entity][version] = "1.5"
 
 projects[entityreference][version] = "1.1"
 
-projects[environment_indicator][version] = "2.3"
+projects[environment_indicator][version] = "2.5"
 
-projects[features][version] = "2.0"
+projects[features][version] = "2.2"
 
-projects[field_group][version] = "1.3"
+projects[field_group][version] = "1.4"
 
 projects[google_analytics][version] = "1.4"
 
-projects[honeypot][version] = "1.16"
+projects[honeypot][version] = "1.17"
 
 projects[jquery_update][version] = "2.4"
 
 projects[media][version] = "1.4"
 
-projects[fpa][version] = "2.5"
+projects[fpa][version] = "2.6"
 
 projects[menu_block][version] = "2.4"
 
@@ -59,15 +59,15 @@ projects[token][version] = "1.5"
 
 projects[views][version] = "3.8"
 
-projects[webform][version] = "4.0-rc3"
+projects[webform][version] = "4.1"
 
-projects[webform_layout][version] = "1.0"
+projects[webform_layout][version] = "1.2"
 
 projects[xmlsitemap][version] = "2.0"
 
 projects[active_tags][version] = "2.x-dev"
 
-projects[metatag][version] = "1.0-beta9"
+projects[metatag][version] = "1.4"
 
 
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
@@ -93,7 +93,7 @@ projects[adminimal_theme][version] = "1.2"
 ; Libraries
 
 libraries[ckeditor][download][type] = "file"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.3.3/ckeditor_4.3.3_standard.zip"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.5/ckeditor_4.4.5_standard.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][destination] = "modules/ckeditor"
 libraries[ckeditor][type] = "library"
