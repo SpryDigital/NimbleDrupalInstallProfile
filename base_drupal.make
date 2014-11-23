@@ -5,7 +5,7 @@ api = 2
 
 ; Core
 
-projects[drupal][version] = "7.33"
+projects[drupal][version] = "7.34"
 
 ; Modules
 
@@ -17,7 +17,7 @@ projects[admin_menu][version] = "3.0-rc4"
 
 projects[adminimal_admin_menu][version] = "1.5"
 
-projects[ctools][version] = "1.4"
+projects[ctools][version] = "1.5"
 
 projects[ckeditor][version] = "1.16"
 
