@@ -5,6 +5,7 @@ core = 7.x
 ; Core dependencies
 dependencies[] = block
 dependencies[] = book
+dependencies[] = color
 dependencies[] = dblog
 dependencies[] = field_sql_storage
 dependencies[] = field
