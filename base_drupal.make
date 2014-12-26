@@ -13,7 +13,7 @@ projects[backup_migrate][version] = "2.8"
 
 projects[views_bulk_operations][version] = "3.2"
 
-projects[admin_menu][version] = "3.0-rc4"
+projects[admin_menu][version] = "3.0-rc5"
 
 projects[adminimal_admin_menu][version] = "1.5"
 
@@ -59,11 +59,11 @@ projects[token][version] = "1.5"
 
 projects[views][version] = "3.8"
 
-projects[webform][version] = "4.1"
+projects[webform][version] = "4.2"
 
 projects[webform_layout][version] = "1.2"
 
-projects[xmlsitemap][version] = "2.0"
+projects[xmlsitemap][version] = "2.1"
 
 projects[active_tags][version] = "2.x-dev"
 
