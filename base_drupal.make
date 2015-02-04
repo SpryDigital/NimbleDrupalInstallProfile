@@ -69,6 +69,8 @@ projects[active_tags][version] = "2.x-dev"
 
 projects[metatag][version] = "1.4"
 
+projects[masquerade][version] = "1.0-rc7"
+
 
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
 ; and url is the url of the download.
